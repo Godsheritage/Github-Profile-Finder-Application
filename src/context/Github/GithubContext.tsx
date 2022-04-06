@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, ReactNode, useEffect, useState } from "react";
+import React, { createContext, ReactNode, useState } from "react";
 import { contextTypes, userTypes } from "../../types";
 
 const GithubContext = createContext<contextTypes | null>(null);

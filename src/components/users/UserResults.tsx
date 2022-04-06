@@ -1,17 +1,12 @@
 import React from "react";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import UserItem from "./UserItem";
 import GithubContext from "../../context/Github/GithubContext";
 import { contextTypes } from "../../types";
 import Spinner from "../layout/Spinner";
 
 const UserResults: React.FC = () => {
-  const { users, isLoading, fetchUsers } = useContext(GithubContext) as contextTypes;
-
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
+  const { users, isLoading } = useContext(GithubContext) as contextTypes;
 
   if (!isLoading) {
     return (
