@@ -5,7 +5,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import NotFound from "./Pages/NotFound";
 import React from "react";
-import { GithubProvider } from "./context/GithubContext";
+import { GithubProvider } from "./context/Github/GithubContext";
 
 const App: React.FC = () => {
   return (
