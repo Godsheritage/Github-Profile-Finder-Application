@@ -8,7 +8,8 @@ const GITHUB_URL = process.env.REACT_APP_GITHUB_API;
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
 export const GithubProvider: React.FC<ReactNode> = ({ children }) => {
-  const [isLoading, setisLoading] = useState<Boolean>(true);
+  // TODO set isLoading to true so the spinner would work
+  const [isLoading, setisLoading] = useState<Boolean>(false);
   const [users, setUsers] = useState<userTypes[]>([]);
 
   const fetchUsers = async () => {
