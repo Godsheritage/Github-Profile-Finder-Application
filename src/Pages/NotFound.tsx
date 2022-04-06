@@ -1,7 +1,7 @@
 import {FaHome} from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
-const NotFound = () => {
+const NotFound : React.FC  = () => {
   return (
     <div className='hero'> 
         <div className="text-center hero-content">

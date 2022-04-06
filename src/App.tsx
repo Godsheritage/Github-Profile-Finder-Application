@@ -6,7 +6,7 @@ import About from "./Pages/About";
 import NotFound from "./Pages/NotFound";
 import React from "react";
 
-const App = () =>  {
+const App : React.FC = () =>  {
   return (
     <Router>
        <div className="flex flex-col justify-between h-screen">
