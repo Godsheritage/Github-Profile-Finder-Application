@@ -12,20 +12,24 @@ export const GithubProvider: React.FC<ReactNode> = ({ children }) => {
   const [isLoading, setisLoading] = useState<Boolean>(false);
   const [users, setUsers] = useState<userTypes[]>([]);
 
-  const fetchUsers = async () => {
-    const response = await axios.get(`${GITHUB_URL}/users`, {
+  
+  const searchUsers = async (text : any) => {
+    const params = new URLSearchParams({
+      q:text
+    })
+    const response:any = await axios.get(`${GITHUB_URL}/search/users?${params}`, {
       headers: {
         Authorization: `token ${GITHUB_TOKEN}`,
       },
     });
-    setUsers(response.data);
+    setUsers(response.items);
     setisLoading(false);
   };
 
  
 
   return (
-    <GithubContext.Provider value={{ isLoading, users, fetchUsers }}>
+    <GithubContext.Provider value={{ isLoading, users, searchUsers }}>
       {children}
     </GithubContext.Provider>
   );

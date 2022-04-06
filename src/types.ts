@@ -1,7 +1,7 @@
 export interface contextTypes {
   isLoading: Boolean;
   users: { id: number; login: String, avatar_url : String }[];
-  fetchUsers : () => Promise<void>
+  searchUsers : (text : any) => Promise<void>
 }
 
 export interface userTypes {

@@ -2,9 +2,11 @@ import { useState, useContext } from "react";
 import GithubContext from "../../context/Github/GithubContext";
 import { contextTypes } from "../../types";
 
+
 const UserSearch = () => {
-  const [text, setText] = useState<any>("");
-  const { users } = useContext(GithubContext) as contextTypes;
+    const { users, searchUsers } = useContext(GithubContext) as contextTypes;
+
+    const [text, setText] = useState<any>('');
 
   const handleChange = (e: any) => {
     setText(e.target.value);
@@ -12,8 +14,13 @@ const UserSearch = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    text === "" ? window.alert("please enter something") : setText("");
-  };
+    if( text === ""){
+        window.alert("please enter something") 
+    } 
+    else {
+        searchUsers(text)
+    }
+  
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 mb-8 gap-8">
