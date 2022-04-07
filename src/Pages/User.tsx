@@ -5,9 +5,10 @@ import { useParams } from "react-router-dom";
 import GithubContext from "../context/Github/GithubContext";
 import Spinner from "../components/layout/Spinner";
 import { contextTypes } from "../types";
+import RepoList from "../components/repos/RepoList";
 
 const User: React.FC = () => {
-  const { getUser, user, isLoading } = useContext(
+  const { getUser, repos, user, isLoading, getRepos } = useContext(
     GithubContext
   ) as contextTypes;
 
@@ -15,6 +16,7 @@ const User: React.FC = () => {
 
   useEffect(() => {
     getUser(params.login);
+    getRepos(params.login);
   }, []);
 
   const {

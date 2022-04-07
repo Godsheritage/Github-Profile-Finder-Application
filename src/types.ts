@@ -23,8 +23,20 @@ export interface contextTypes {
   searchUsers: (text: any) => Promise<void>;
   clearUsers: () => void;
   getUser: (login: any) => void;
+  repos : repoTypes[] | undefined
+  getRepos : any
 }
 
 export interface AlertContextTypes {
   alert: null;
+}
+
+export interface repoTypes {
+  name: String;
+  description: String;
+  html_url: String;
+  forks: Number;
+  open_issues: Number;
+  watchers_count: Number;
+  stargazers_count: Number;
 }
