@@ -1,18 +1,19 @@
+export interface userTypes {
+  id: Number;
+  login: String;
+  avatar_url: String;
+}
+
 export interface contextTypes {
   isLoading: Boolean;
-  users: { id: number; login: String, avatar_url : String }[];
-  searchUsers : (text : any) => Promise<void>;
-  clearUsers: () => void
+  users: any;
+  user: any;
+  searchUsers: (text: any) => Promise<void>;
+  clearUsers: () => void;
+  getUser : (login : any) => void
 }
 
-export interface userTypes {
-    id: number; 
-    login: String;
-    avatar_url : String;
-    
-}
 
 export interface AlertContextTypes {
-  
+  alert: null;
 }
-
