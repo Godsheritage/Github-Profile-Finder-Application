@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
+import Home from "./Pages/Home";
+import User from "./Pages/User";
+import About from "./Pages/About";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import User from "./Pages/User";
 import NotFound from "./Pages/NotFound";
-import React from "react";
 import { GithubProvider } from "./context/Github/GithubContext";
 
 const App: React.FC = () => {
