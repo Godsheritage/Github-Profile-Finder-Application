@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext } from "react";
 import UserItem from "./UserItem";
-import GithubContext from "../../context/Github/GithubContext";
-import { contextTypes } from "../../types";
 import Spinner from "../layout/Spinner";
+import { contextTypes } from "../../types";
+import GithubContext from "../../context/Github/GithubContext";
 
 const UserResults: React.FC = () => {
   const { users, isLoading } = useContext(GithubContext) as contextTypes;
